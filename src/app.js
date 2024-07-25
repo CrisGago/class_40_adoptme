@@ -11,7 +11,8 @@ import sessionsRouter from './routes/sessions.router.js';
 
 const app = express();
 const PORT = process.env.PORT||8080;
-const connection = mongoose.connect('mongodb://127.0.0.1:27017/coder_53120');
+const connection = mongoose.connect(process.env.MONGO_URL);
+//const connection = mongoose.connect('mongodb://127.0.0.1:27017/coder_53120');
 
 app.use(express.json());
 app.use(cookieParser());
